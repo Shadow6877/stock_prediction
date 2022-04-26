@@ -4,8 +4,8 @@ pandas
 yfinance 
 datetime
 seaborn
-matplotlib.pyplot
-sklearn.preprocessing
+matplotlib
+sklearn
 pandas_datareader
 keras
 streamlit
