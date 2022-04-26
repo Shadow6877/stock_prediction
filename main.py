@@ -1,4 +1,4 @@
-from pyexpat import model
+#from pyexpat import model
 import numpy as np
 import pandas as pd
 import yfinance as yf
