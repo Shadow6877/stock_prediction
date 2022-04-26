@@ -4,7 +4,6 @@ import pandas as pd
 import yfinance as yf
 import datetime as dt
 import seaborn as sns
-import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
