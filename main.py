@@ -1,6 +1,5 @@
 #from pyexpat import model
 import datetime
-from tkinter.ttk import Style
 import numpy as np
 import pandas as pd
 import yfinance as yf
