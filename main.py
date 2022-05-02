@@ -28,102 +28,39 @@ st.sidebar.write('Click here to view the portfolio :')
 st.sidebar.markdown(link, unsafe_allow_html=True)
 st.sidebar.write('')
 
-def take_options(options1):
-    match options1:
-        case 'Jubilant Pharmova Limited':
-            return 'JUBLPHARMA.NS'
-        case 'Canara Bank':
-            return 'CANBK.NS'
-        case 'Indiabulls Housing Finance Limited':
-            return 'IBULHSGFIN.BO'
-        case 'Anant Raj Limited':
-            return 'ANANTRAJ.NS'
-        case 'Agro Tech Foods Limited':
-            return 'ATFL.BO'
-        case 'Autoline Industries Limited':
-            return 'AUTOIND.BO'
-        case 'D B Realty Limited':
-            return 'DBREALTY.BO'
-        case 'Edelweiss Financial Services Limited':
-            return 'EDELWEISS.NS'
-        case 'The Federal Bank Limited':
-            return 'FEDERALBNK.BO'
-        case 'Fortis Healthcare Limited':
-            return 'FORTIS.BO'
-        case 'Man Infraconstruction Limited':
-            return 'MANINFRA.BO'
-        case 'National Aluminium Company Limited':
-            return 'NATIONALUM.NS'
-        case 'NCC Limited':
-            return 'NCC.NS'
-        case 'Orient Cement Limited':
-            return 'ORIENTCEM.NS'
-        case 'Rallis India Limited':
-            return 'RALLIS.NS'
-        case 'Tata Communications Limited':
-            return 'TATACOMM.BO'
-        case 'VA Tech Wabag Limited':
-            return 'WABAG.NS'
-        case 'Dishman Carbogen Amcis Limited':
-            return 'DCAL.NS'
-        case 'Nazara Technologies Limited':
-            return 'NAZARA.NS'
-        case 'Jubilant Ingrevia Limited':
-            return 'JUBLINGREA.NS'
-        case 'Star Health and Allied Insurance Company Limited':
-            return 'STARHEALTH.NS'
-        case 'Metro Brands Limited':
-            return 'METROBRAND.NS'
-        case 'CRISIL Limited':
-            return 'CRISIL.NS'
-        case 'Delta Corp Limited':
-            return 'DELTACORP.NS'
-        case 'The Indian Hotels Company Limited':
-            return 'INDHOTEL.NS'
-        case 'Titan Company Limited':
-            return 'TITAN.NS'
-        case 'Aptech Limited':
-            return 'APTECHT.NS'
-        case 'Wockhardt Limited':
-            return 'WOCKPHARMA.NS'
-        case 'TV18 Broadcast Limited':
-            return 'TV18BRDCST.NS'
-        case 'The Karur Vysya Bank Limited':
-            return 'KARURVYSYA.BO'
-
 options1 = st.sidebar.selectbox(
      'Select the stock : ',
-     ['NCC Limited', 
-      'Canara Bank', 
-      'CRISIL Limited',
-      'Aptech Limited', 
-      'Anant Raj Limited', 
-      'Wockhardt Limited', 
-      'D B Realty Limited', 
-      'Delta Corp Limited', 
-      'Metro Brands Limited', 
-      'Rallis India Limited',
-      'VA Tech Wabag Limited',
-      'Orient Cement Limited', 
-      'Titan Company Limited',
-      'TV18 Broadcast Limited',
-      'Agro Tech Foods Limited', 
-      'The Federal Bank Limited',
-      'Fortis Healthcare Limited',  
-      'Jubilant Pharmova Limited', 
-      'Jubilant Ingrevia Limited',
-      'Autoline Industries Limited',
-      'Nazara Technologies Limited', 
-      'Tata Communications Limited', 
-      'Tata Communications Limited', 
-      'The Karur Vysya Bank Limited',
-      'Man Infraconstruction Limited', 
-      'Dishman Carbogen Amcis Limited', 
-      'Indiabulls Housing Finance Limited', 
-      'National Aluminium Company Limited',
+     ['JUBLPHARMA.NS', 
+      'CANBK.NS', 
+      'IBULHSGFIN.BO',
+      'ANANTRAJ.NS', 
+      'ATFL.BO', 
+      'AUTOIND.BO', 
+      'DBREALTY.BO', 
+      'EDELWEISS.NS', 
+      'FEDERALBNK.BO', 
+      'FORTIS.BO',
+      'MANINFRA.BO',
+      'NATIONALUM.NS', 
+      'NCC.NS',
+      'ORIENTCEM.NS',
+      'RALLIS.NS', 
+      'TATACOMM.BO',
+      'WABAG.NS',  
+      'DCAL.NS', 
+      'NAZARA.NS',
+      'JUBLINGREA.NS',
+      'STARHEALTH.NS', 
+      'METROBRAND.NS', 
+      'CRISIL.NS', 
+      'DELTACORP.NS',
+      'INDHOTEL.NS', 
+      'TITAN.NS', 
+      'APTECHT.NS', 
+      'WOCKPHARMA.NS',
       'Edelweiss Financial Services Limited', 
-      'The Indian Hotels Company Limited', 
-      'Star Health and Allied Insurance Company Limited'
+      'TV18BRDCST.NS', 
+      'KARURVYSYA.BO'
        ])
 
 st.write('You have selected : ',options1)
@@ -143,9 +80,7 @@ end_date1 = dt.datetime.strptime(str(end_date1), "%Y-%m-%d").date()
 end_date = dt.datetime.strptime(str(end_date), "%Y-%m-%d").date()
 start_date = dt.datetime.strptime(str(start_date), "%Y-%m-%d").date()
 
-options = take_options(options1)
-
-data = df.DataReader(options, 'yahoo', start_date, end_date)
+data = df.DataReader(options1, 'yahoo', start_date, end_date)
 
 st.sidebar.write('')
 
