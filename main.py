@@ -28,39 +28,101 @@ st.sidebar.write('Click here to view the portfolio :')
 st.sidebar.markdown(link, unsafe_allow_html=True)
 st.sidebar.write('')
 
+def take_options(options1):
+    if options1 == 'Jubilant Pharmova Limited':
+        return 'JUBLPHARMA.NS'
+    elif options1 == 'Canara Bank':
+        return 'CANBK.NS'
+    elif options1 =='Indiabulls Housing Finance Limited':
+        return 'IBULHSGFIN.BO'
+    elif options1 == 'Anant Raj Limited':
+        return 'ANANTRAJ.NS'
+    elif options1 =='Agro Tech Foods Limited':
+        return 'ATFL.BO'
+    elif options1 == 'Autoline Industries Limited':
+        return 'AUTOIND.BO'
+    elif options1 == 'D B Realty Limited':
+        return 'DBREALTY.BO'
+    elif options1 == 'Edelweiss Financial Services Limited':
+        return 'EDELWEISS.NS'
+    elif options1 == 'The Federal Bank Limited':
+        return 'FEDERALBNK.BO'
+    elif options1 == 'Fortis Healthcare Limited':
+        return 'FORTIS.BO'
+    elif options1 == 'Man Infraconstruction Limited':
+        return 'MANINFRA.BO'
+    elif options1 == 'National Aluminium Company Limited':
+        return 'NATIONALUM.NS'
+    elif options1 == 'NCC Limited':
+        return 'NCC.NS'
+    elif options1 == 'Orient Cement Limited':
+        return 'ORIENTCEM.NS'
+    elif options1 == 'Rallis India Limited':
+        return 'RALLIS.NS'
+    elif options1 == 'Tata Communications Limited':
+        return 'TATACOMM.BO'
+    elif options1 == 'VA Tech Wabag Limited':
+        return 'WABAG.NS'
+    elif options1 == 'Dishman Carbogen Amcis Limited':
+        return 'DCAL.NS'
+    elif options1 == 'Nazara Technologies Limited':
+        return 'NAZARA.NS'
+    elif options1 == 'Jubilant Ingrevia Limited':
+        return 'JUBLINGREA.NS'
+    elif options1 == 'Star Health and Allied Insurance Company Limited':
+        return 'STARHEALTH.NS'
+    elif options1 == 'Metro Brands Limited':
+        return 'METROBRAND.NS'
+    elif options1 == 'CRISIL Limited':
+        return 'CRISIL.NS'
+    elif options1 == 'Delta Corp Limited':
+        return 'DELTACORP.NS'
+    elif options1 == 'The Indian Hotels Company Limited':
+        return 'INDHOTEL.NS'
+    elif options1 == 'Titan Company Limited':
+        return 'TITAN.NS'
+    elif options1 == 'Aptech Limited':
+        return 'APTECHT.NS'
+    elif options1 == 'Wockhardt Limited':
+        return 'WOCKPHARMA.NS'
+    elif options1 == 'TV18 Broadcast Limited':
+        return 'TV18BRDCST.NS'
+    elif options1 == 'The Karur Vysya Bank Limited':
+        return 'KARURVYSYA.BO'
+
 options1 = st.sidebar.selectbox(
      'Select the stock : ',
-     ['JUBLPHARMA.NS', 
-      'CANBK.NS', 
-      'IBULHSGFIN.BO',
-      'ANANTRAJ.NS', 
-      'ATFL.BO', 
-      'AUTOIND.BO', 
-      'DBREALTY.BO', 
-      'EDELWEISS.NS', 
-      'FEDERALBNK.BO', 
-      'FORTIS.BO',
-      'MANINFRA.BO',
-      'NATIONALUM.NS', 
-      'NCC.NS',
-      'ORIENTCEM.NS',
-      'RALLIS.NS', 
-      'TATACOMM.BO',
-      'WABAG.NS',  
-      'DCAL.NS', 
-      'NAZARA.NS',
-      'JUBLINGREA.NS',
-      'STARHEALTH.NS', 
-      'METROBRAND.NS', 
-      'CRISIL.NS', 
-      'DELTACORP.NS',
-      'INDHOTEL.NS', 
-      'TITAN.NS', 
-      'APTECHT.NS', 
-      'WOCKPHARMA.NS',
+     ['NCC Limited', 
+      'Canara Bank', 
+      'CRISIL Limited',
+      'Aptech Limited', 
+      'Anant Raj Limited', 
+      'Wockhardt Limited', 
+      'D B Realty Limited', 
+      'Delta Corp Limited', 
+      'Metro Brands Limited', 
+      'Rallis India Limited',
+      'VA Tech Wabag Limited',
+      'Orient Cement Limited', 
+      'Titan Company Limited',
+      'TV18 Broadcast Limited',
+      'Agro Tech Foods Limited', 
+      'The Federal Bank Limited',
+      'Fortis Healthcare Limited',  
+      'Jubilant Pharmova Limited', 
+      'Jubilant Ingrevia Limited',
+      'Autoline Industries Limited',
+      'Nazara Technologies Limited', 
+      'Tata Communications Limited', 
+      'Tata Communications Limited', 
+      'The Karur Vysya Bank Limited',
+      'Man Infraconstruction Limited', 
+      'Dishman Carbogen Amcis Limited', 
+      'Indiabulls Housing Finance Limited', 
+      'National Aluminium Company Limited',
       'Edelweiss Financial Services Limited', 
-      'TV18BRDCST.NS', 
-      'KARURVYSYA.BO'
+      'The Indian Hotels Company Limited', 
+      'Star Health and Allied Insurance Company Limited'
        ])
 
 st.write('You have selected : ',options1)
@@ -80,7 +142,9 @@ end_date1 = dt.datetime.strptime(str(end_date1), "%Y-%m-%d").date()
 end_date = dt.datetime.strptime(str(end_date), "%Y-%m-%d").date()
 start_date = dt.datetime.strptime(str(start_date), "%Y-%m-%d").date()
 
-data = df.DataReader(options1, 'yahoo', start_date, end_date)
+options = take_options(options1)
+
+data = df.DataReader(options, 'yahoo', start_date, end_date)
 
 st.sidebar.write('')
 
